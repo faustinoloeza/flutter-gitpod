@@ -1,4 +1,9 @@
 # Flutter app template
+
+Con este template y la ayuda de Gitpod puedes desarrollar aplicaciones multiplataforma con el SDK de Flutter desde cualquier dispositivo con un navegador.
+
+Primero te recomiendo registrarte en https://gitpod.io/ una vez registrado, darle click al boton de Open in Gitpod en la parte inferior, esto te creara un proyecto de flutter vacio que podras probar en Linux o en el navegador.
+
 The [Flutter](https://flutter.dev/) template, configured for [Gitpod](https://www.gitpod.io) to give you pre-built, ephemeral development environments in the cloud.
 
 FLUTTER VERSION 3.10
@@ -13,6 +18,11 @@ Click the button below to start a new development environment:
 
 
 [![Descripción de la imagen](https://i.imgur.com/STJGlFZ.png)](https://gitpod.io/#https://github.com/faustinoloeza/flutter-gitpod)
+
+## Now create an empty project 
+
+[![Descripción de la imagen](https://i.imgur.com/a9WJRxn.png)](https://gitpod.io/#https://github.com/faustinoloeza/flutter-gitpod)
+
 
 
 ## Get Started With Your Own Project
