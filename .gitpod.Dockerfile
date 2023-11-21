@@ -5,7 +5,7 @@ ENV ANDROID_HOME=$HOME/androidsdk \
     QTWEBENGINE_DISABLE_SANDBOX=1
 ENV PATH="$HOME/flutter/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
-# Install Open JDK for android and other dependencies
+# Install Open JDK for Android and other dependencies
 USER root
 RUN install-packages openjdk-8-jdk -y \
         libgtk-3-dev \
@@ -19,25 +19,24 @@ RUN install-packages openjdk-8-jdk -y \
         fonts-noto-cjk \
     && update-java-alternatives --set java-1.8.0-openjdk-amd64
     
-#Update google chrome 
+# Update Google Chrome 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \ 
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 RUN apt-get update && apt-get -y install google-chrome-stable
 
-
-# Insall flutter and dependencies
+# Install Flutter and dependencies
 USER gitpod
 RUN wget -q "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz" -O - \
     | tar xpJ -C "$HOME" \
-    && _file_name="commandlinetools-linux-10406996_latest.zip" && wget "https://dl.google.com/android/repository/$_file_name" \
+    && _file_name="commandlinetools-linux-10406996_latest.zip" \
+    && wget "https://dl.google.com/android/repository/$_file_name" \
     && unzip "$_file_name" -d $ANDROID_HOME \
     && rm -f "$_file_name" \
     && mkdir -p $ANDROID_HOME/cmdline-tools/latest \
     && mv $ANDROID_HOME/cmdline-tools/{bin,lib} $ANDROID_HOME/cmdline-tools/latest \
-    && yes | sdkmanager "platform-tools" "build-tools;34.0.5" "platforms;android-34" \
-    && flutter precache && for _plat in web linux-desktop; do flutter config --enable-${_plat}; done \
+    && yes | sdkmanager "platform-tools" "build-tools;34.0.0" "platforms;android-33" \
+    && flutter precache \
+    && for _plat in web linux-desktop; do flutter config --enable-$_plat; done \
     && flutter config --android-sdk $ANDROID_HOME \
     && yes | flutter doctor --android-licenses \
     && flutter doctor
-
-
