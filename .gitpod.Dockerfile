@@ -7,7 +7,7 @@ ENV PATH="$HOME/flutter/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_
 
 # Install Open JDK for android and other dependencies
 USER root
-RUN install-packages openjdk-8-jdk -y \
+RUN install-packages openjdk-17-jdk -y \
         libgtk-3-dev \
         liblzma-dev \
         clang \
@@ -17,7 +17,8 @@ RUN install-packages openjdk-8-jdk -y \
         libnss3-dev \
         fonts-noto \
         fonts-noto-cjk \
-    && update-java-alternatives --set java-1.8.0-openjdk-amd64
+        libstdc++-12-dev \
+        && update-java-alternatives --set java-1.17.0-openjdk-amd64
 
 # Update google chrome 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
