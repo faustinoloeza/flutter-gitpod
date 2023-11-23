@@ -40,7 +40,7 @@ RUN echo "Downloading Android command line tools..." \
 RUN echo "Setting up Android SDK..." \
     && mkdir -p $ANDROID_HOME/cmdline-tools/latest \
     && mv $ANDROID_HOME/cmdline-tools/{bin,lib} $ANDROID_HOME/cmdline-tools/latest \
-    && yes | sdkmanager "platform-tools" "build-tools;31.0.0" "platforms;android-31" \
+    && yes | sdkmanager "platform-tools" "build-tools;34.0.0" "platforms;android-33" \
     && echo "Android SDK set up successfully."
 
 RUN echo "Setting up Flutter..." \
