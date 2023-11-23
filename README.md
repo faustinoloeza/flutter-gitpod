@@ -1,14 +1,12 @@
-# Flutter app template
-
+# Flutter app template 
+- Flutter version 3.16.0
+- Ubuntu 22.04.3 LTS
+  
 Con este template y la ayuda de Gitpod puedes desarrollar aplicaciones multiplataforma con el SDK de Flutter desde cualquier dispositivo con un navegador.
 
 Primero te recomiendo registrarte en https://gitpod.io/ una vez registrado, darle click al boton de Open in Gitpod en la parte inferior, esto te creara un proyecto de flutter vacio que podras probar en Linux o en el navegador.
 
 The [Flutter](https://flutter.dev/) template, configured for [Gitpod](https://www.gitpod.io) to give you pre-built, ephemeral development environments in the cloud.
-
-FLUTTER VERSION 3.10
-
-JAVA VERSION 11.0.19
 
 ## Next Steps
 
