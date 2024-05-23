@@ -1,0 +1,54 @@
+# Define the Docker image to use
+image:
+  file: .gitpod.Dockerfile
+
+# Define tasks to run on Gitpod startup
+tasks:
+  # Task 1: Build for different targets
+  - name: Build for different targets
+    init: |
+      # If there is no pubspec.yaml, create a new Flutter project
+      if [ ! -e "pubspec.yaml" ]; then
+        rm -f /workspace/.template_init
+        flutter create -e -a kotlin -i swift --project-name gitpod .
+      fi
+      # Build the project for Linux and web
+      flutter build -v linux && flutter build -v web
+      # Create a file to signal that the build is complete
+      touch /workspace/.template_init
+
+  # Task 2: Run the project
+  - name: Run project
+    command: |
+      # Clear the terminal
+      printf "\033[3J\033c\033[3J"
+      # Wait for the build to complete
+      if [ ! -e /workspace/.template_init ]; then
+        echo 'info[gitpod]: Waiting for the flutter build process to complete ...'
+        until [ -e /workspace/.template_init ]; do
+          sleep 0.5
+        done
+      fi
+      # Get Flutter dependencies and run the project
+      flutter pub get
+      flutter run -d linux
+
+# Define how to handle different ports
+ports:
+  - port: 5900
+    onOpen: ignore
+  - port: 6080
+    onOpen: open-preview
+  - port: 8080
+    onOpen: ignore
+  - port: 5037
+    onOpen: ignore
+  - port: 9100-9101
+    onOpen: ignore
+  - port: 40000-50000
+    onOpen: ignore
+
+# Define VS Code extensions to install
+vscode:
+  extensions:
+    - dart-code.flutter
