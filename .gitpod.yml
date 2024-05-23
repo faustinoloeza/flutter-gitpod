@@ -32,6 +32,7 @@ tasks:
       # Get Flutter dependencies and run the project
       flutter pub get
       flutter run -d linux
+      
 
 # Define how to handle different ports
 ports:
