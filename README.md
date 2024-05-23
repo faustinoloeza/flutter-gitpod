@@ -15,11 +15,7 @@ Click the button below to start a new development environment:
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/faustinoloeza/flutter-gitpod)
 
 
-[![Descripción de la imagen](https://i.imgur.com/STJGlFZ.png)](https://i.imgur.com/STJGlFZ.png)
-
-## Now create an empty project 
-
-[![Descripción de la imagen](https://i.imgur.com/a9WJRxn.png)](https://i.imgur.com/a9WJRxn.png)
+[![Descripción de la imagen](https://i.imgur.com/R4kDwqX.png)](https://i.imgur.com/R4kDwqX.png)
 
 
 
