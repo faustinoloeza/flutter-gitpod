@@ -21,9 +21,6 @@ RUN install-packages openjdk-17-jdk -y \
         fonts-noto-cjk \
         libstdc++-12-dev \
         && update-java-alternatives --set java-1.17.0-openjdk-amd64
-        && export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 \
-        && export PATH=\$JAVA_HOME/bin:\$PATH
-
 # Update google chrome 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
