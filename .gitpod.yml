@@ -7,7 +7,7 @@ tasks:
   # Task 1: Set JAVA_HOME and PATH
   - name: Set JAVA_HOME and PATH
     init: |
-      export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 \
+      export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 
       export PATH=$JAVA_HOME/bin:$PATH
 
   # Task 2: Build for different targets
