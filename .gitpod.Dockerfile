@@ -52,3 +52,10 @@ RUN echo "Setting up Flutter..." \
     && yes | flutter doctor --android-licenses \
     && flutter doctor \
     && echo "Flutter set up successfully."
+
+
+RUN echo "Setting Java HOME..." \
+    && echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc \
+    && echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc \
+    && source ~/.bashrc
+
