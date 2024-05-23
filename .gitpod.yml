@@ -2,6 +2,8 @@
 image:
   file: .gitpod.Dockerfile
 
+# Define tasks to run on Gitpod startup
+tasks:
   # Task 1: Build for different targets
   - name: Build for different targets
     init: |
@@ -30,6 +32,7 @@ image:
       # Get Flutter dependencies and run the project
       flutter pub get
       flutter run -d linux
+      flutter doctor --android-licenses
 
 # Define how to handle different ports
 ports:
