@@ -35,7 +35,7 @@ RUN echo "Downloading Flutter..." \
     && echo "Flutter downloaded successfully."
 
 RUN echo "Downloading Android command line tools..." \
-    && wget "https://dl.google.com/android/repository/$COMMANDLINETOOLS_LATEST" -O commandlinetools.zip \
+    && wget "https://dl.google.com/android/repository/${COMMANDLINETOOLS_LATEST}" -O commandlinetools.zip \
     && unzip commandlinetools.zip -d $ANDROID_HOME/cmdline-tools \
     && rm -f commandlinetools.zip \
     && mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest \
