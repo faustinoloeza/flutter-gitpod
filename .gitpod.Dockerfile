@@ -2,7 +2,8 @@ FROM gitpod/workspace-full-vnc:2024-11-28-07-47-16
 
 SHELL ["/bin/bash", "-c"]
 ENV ANDROID_HOME=$HOME/androidsdk \
-    FLUTTER_VERSION=3.22.1-stable \
+    FLUTTER_VERSION=3.27.0-stable \
+    COMMAND_LINE_TOOLS=commandlinetools-linux-11076708_latest \
     QTWEBENGINE_DISABLE_SANDBOX=1 
 ENV PATH="$HOME/flutter/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
@@ -20,6 +21,7 @@ RUN install-packages openjdk-17-jdk -y \
         fonts-noto-cjk \
         libstdc++-12-dev \
         && update-java-alternatives --set java-1.17.0-openjdk-amd64
+
 # Update google chrome 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
@@ -32,7 +34,7 @@ RUN echo "Downloading Flutter..." \
     && echo "Flutter downloaded successfully."
 
     RUN echo "Downloading Android command line tools..." \
-    && _file_name="commandlinetools-linux-11076708_latest.zip" \
+    && _file_name="${COMMAND_LINE_TOOLS}.zip" \
     && wget "https://dl.google.com/android/repository/$_file_name" \
     && unzip "$_file_name" -d $ANDROID_HOME \
     && rm -f "$_file_name" \
