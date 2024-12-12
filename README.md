@@ -1,5 +1,5 @@
 # Flutter app template 
-- Flutter version 3.22.1
+- Flutter version 3.27.0
 - Ubuntu 22.04.3 LTS
   
 Con este template y la ayuda de Gitpod puedes desarrollar aplicaciones multiplataforma con el SDK de Flutter desde cualquier dispositivo con un navegador.
